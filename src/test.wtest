@@ -1,0 +1,89 @@
+import clientes.*
+import remiserias.*
+import oficina.*
+
+test "roxana viaje de 10 kms" {
+
+	assert.equals(180, roxana.precioViaje(ludmila, 10))
+	assert.equals(300, roxana.precioViaje(anaMaria, 10))
+	assert.equals(220, roxana.precioViaje(teresa, 10))
+}
+
+test "gabriela viaje de 10 kms"{
+	
+	assert.equals(216, gabriela.precioViaje(ludmila, 10))
+	assert.equals(360, gabriela.precioViaje(anaMaria, 10))
+	assert.equals(264, gabriela.precioViaje(teresa, 10))
+}
+
+test "mariela viaje de 10 kms"{
+	
+	assert.equals(180, mariela.precioViaje(ludmila, 10))
+	assert.equals(300, mariela.precioViaje(anaMaria, 10))
+	assert.equals(220, mariela.precioViaje(teresa, 10))
+}
+
+test "juana viaje de 10 kms"{
+	
+	assert.equals(200, juana.precioViaje(ludmila, 10))
+	assert.equals(200, juana.precioViaje(anaMaria, 10))
+	assert.equals(200, juana.precioViaje(teresa, 10))
+}
+
+test "roxana viaje de 2 kms" {
+
+	assert.equals(36, roxana.precioViaje(ludmila, 2))
+	assert.equals(60, roxana.precioViaje(anaMaria, 2))
+	assert.equals(44, roxana.precioViaje(teresa, 2))
+}
+
+test "gabriela viaje de 2 kms" {
+
+	assert.equals(43.2, gabriela.precioViaje(ludmila, 2))
+	assert.equals(72, gabriela.precioViaje(anaMaria, 2))
+	assert.equals(52.8, gabriela.precioViaje(teresa, 2))
+}
+
+test "mariela viaje de 2 kms" {
+
+	assert.equals(50, mariela.precioViaje(ludmila, 2))
+	assert.equals(60, mariela.precioViaje(anaMaria, 2))
+	assert.equals(50, mariela.precioViaje(teresa, 2))
+}
+
+test "juana viaje de 2 kms" {
+
+	assert.equals(100, juana.precioViaje(ludmila, 2))
+	assert.equals(100, juana.precioViaje(anaMaria, 2))
+	assert.equals(100, juana.precioViaje(teresa, 2))
+}
+
+test "lucia reemplaza a mariela y melina trabaja para ludmila"{
+	
+	lucia.remiseraQueReemplaza(mariela)
+	melina.clientaParaQuienTrabaja(ludmila)
+	
+	assert.equals(150, lucia.precioViaje(melina, 10))
+	assert.equals(50, lucia.precioViaje(melina, 1))
+}
+
+test "lucia reemplaza a gabriela y melina trabaja para ludmila"{
+	
+	lucia.remiseraQueReemplaza(gabriela)
+	melina.clientaParaQuienTrabaja(ludmila)
+	
+	assert.equals(180, lucia.precioViaje(melina, 10))
+	assert.equals(18, lucia.precioViaje(melina, 1))
+}
+
+test "oficina 1er opcion roxana, 2da opcion juana"{
+	
+	oficina.asignarRemiseras(roxana, juana)
+	
+	assert.equals(juana, oficina.remiseraElegidaParaViaje(anaMaria, 10))
+	assert.equals(roxana, oficina.remiseraElegidaParaViaje(teresa, 10))
+	assert.equals(roxana, oficina.remiseraElegidaParaViaje(anaMaria, 4))
+}
+
+
+
