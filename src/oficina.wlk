@@ -19,6 +19,7 @@ object oficina {
 	}
 	
 	method intercambiarRemiseras(){
+		/*Excelente */
 		self.asignarRemiseras(remisera2Actual, remisera1Actual)
 	}
 	
