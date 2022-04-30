@@ -8,19 +8,15 @@ object ludmila {
 
 object anaMaria {
 	var estaEstable = true
+	/* Otra Forma más resumida*/
+	method precioPorKilometro()= if(estaEstable){30}else{25}
 	
-	method precioPorKilometro(){
-		if(estaEstable){
-			return 30
-		}else return 25
-	}
 	
 	method estaEstable() = estaEstable
 	
 	method cambiarSituacionEconomica(){
-		if (estaEstable){
-			estaEstable = false
-		}else estaEstable =true
+		/*Voy invirtiendo de true a false y de false a true */
+		estaEstable = !estaEstable
 	}
 	
 }
@@ -36,6 +32,7 @@ object teresa {
 }
 
 object melina {
+	/*Muy Bien */
 	var clientaActual
 	
 	method clientaParaQuienTrabaja() = clientaActual
